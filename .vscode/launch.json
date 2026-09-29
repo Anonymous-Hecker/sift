@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Sift: scan Downloads",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "sift",
+      "args": ["scan", "${userHome}/Downloads"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
