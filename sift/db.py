@@ -10,10 +10,23 @@ CREATE TABLE IF NOT EXISTS files (
     extension TEXT,
     size_bytes INTEGER NOT NULL,
     modified_at REAL NOT NULL,
-    accessed_at REAL NOT NULL,
+    accessed_at REAL,
     scanned_at REAL NOT NULL
 );
-CREATE INDEX IF NOT EXISTS idx_files_size ON files (size_bytes);
+CREATE INDEX IF NOT EXISTS idx_files_size ON files(size_bytes);
+
+CREATE TABLE IF NOT EXISTS operations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    batch_id TEXT NOT NULL,
+    op_type TEXT NOT NULL,
+    source_path TEXT NOT NULL,
+    dest_path TEXT NOT NULL,
+    status TEXT NOT NULL,
+    error TEXT,
+    created_at REAL NOT NULL,
+    finished_at REAL
+);
+CREATE INDEX IF NOT EXISTS idx_ops_batch ON operations(batch_id);
 """
 
 

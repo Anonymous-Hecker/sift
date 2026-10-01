@@ -8,7 +8,9 @@ A Windows app that removes file-management stress:
 2. Finds big, rarely used files and moves them to another drive, with your approval
 3. Sorts new downloads and keeps a journal so every action can be undone
 
-Status: work in progress (M1 done: drive scanner).
+Status: work in progress 
+        {M1 done: drive scanner}
+        {M2 done: operation journal with undo and dry-run}
 
 ## Run it
 

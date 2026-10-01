@@ -1,6 +1,6 @@
 from pathlib import Path
 
-# Sift keeps its own database and logs in an hidden folder -> home direc
+# Sift keeps its own database and logs in an hidden folder -> home directory
 APP_DIR = Path.home() / ".sift"
 DB_PATH = APP_DIR / "sift.db"
 LOG_PATH = APP_DIR / "sift.log"
@@ -18,6 +18,16 @@ EXCLUDED_DIRS = {
 
 # Ignoring these files
 TEMP_SUFFIXES = {".crdownload", ".part", ".tmp", ".partial"}
+
+# Top-level Windows folders that Sift refuses to touch, ever
+PROTECTED_TOP_LEVEL = {
+    "windows",
+    "program files",
+    "program files (x86)",
+    "programdata",
+    "$recycle.bin",
+    "system volume information",
+}
 
 
 def ensure_app_dir():
